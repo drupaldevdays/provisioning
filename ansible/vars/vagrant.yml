@@ -1,0 +1,79 @@
+---
+server:
+    install: '1'
+    packages: [vim, git, fail2ban, htop, iotop, imagemagick, nodejs, npm]
+    timezone: UTC
+    locale: en_US.UTF-8
+vagrant_local:
+    install: '1'
+    vm: { base_box: trusty64, hostname: default, ip: 192.168.88.88, memory: '1024', sharedfolder: ../website, useVagrantCloud: '1', syncType: nfs }
+apache:
+    install: '1'
+    docroot: /var/www/milan2016.drupaldays.loc
+    servername: milan2016.drupaldays.loc
+    user: vagrant
+    group: vagrant
+mysql:
+    install: '1'
+    root_password: root
+    database: ddd
+    user: ddd
+    password: ddd
+    dump: ''
+php:
+    install: '0'
+    ppa: php5-5.6
+    packages: [php5-cli, php5-intl, php5-curl, php5-common, php5-gd, php5-mbstring, php5-mysql]
+php7:
+    ppa: php-7.0
+    packages: [php-cli, php-common, php-curl, php-gd, php-intl, php-mysql, php-opcache, php-phpdbg]
+php7-src:
+    version: "php-7.0.0RC8"
+    packages_dev:
+        - autoconf
+        - bison
+        - build-essential
+        - libbz2-dev
+        - libc-client2007e
+        - libc-client2007e-dev
+        - libcurl4-openssl-dev
+        - libfcgi-dev
+        - libfcgi0ldbl
+        - libfreetype6-dev
+        - libgmp-dev
+        - libjpeg-dev
+        - libkrb5-dev
+        - libmcrypt-dev
+        - libmysqlclient-dev
+        - libpng12-dev
+        - libpq-dev
+        - libpspell-dev
+        - librecode-dev
+        - libssl-dev
+        - libt1-dev
+        - libxml2-dev
+        - libxslt1-dev
+    config_file: { path: "/etc/php7/php.ini" }
+    base_path: "/usr/local"
+    prefix: "/usr/local/php-7.0.0RC8"
+    fpm:
+        user: www-data
+        group: www-data
+drush:
+    path: '/usr/local/bin/drush'
+    version: '8.0.0'
+xdebug:
+    install: '1'
+composer:
+    install: '1'
+    install_dir: /usr/local/bin
+    path: /usr/local/bin/composer
+    home_path: '/home/vagrant/.composer'
+    home_path_owner: vagrant
+    home_path_group: vagrant
+    skip_dev_deps: no
+app:
+    drupal_core_path: /var/www/milan2016.drupaldays.loc
+
+security_ssh_password_authentication: yes
+security_ssh_permit_root_login: no

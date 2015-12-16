@@ -1,0 +1,32 @@
+---
+server:
+    install: '1'
+    packages: [vim, fail2ban, htop, iotop, imagemagick]
+    timezone: UTC
+    locale: en_US.UTF-8
+apache:
+    install: '1'
+    docroot: /var/www
+    servername: milan2016.drupaldays.stage
+mysql:
+    install: '1'
+    root_password: {{ vault_mysql_root_password }}
+    database: {{ vault_mysql_database }}
+    user: {{ vault_mysql_user }}
+    password: {{ vault_mysql_password }}
+    dump: ''
+php7:
+    ppa: php-7.0
+    packages: [php-cli, php-common, php-curl, php-gd, php-intl, php-mysql, php-opcache, php-phpdbg]
+drush:
+    destination: '/usr/local/bin/drush'
+    version: '8.0.0'
+xdebug:
+    install: '0'
+composer:
+    install: '0'
+app:
+    drupal_core_path: /var/www/milan2016.drupaldays.loc
+
+security_ssh_password_authentication: yes # to be changed once the machine is set up
+security_ssh_permit_root_login: no

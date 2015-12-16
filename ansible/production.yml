@@ -1,0 +1,43 @@
+---
+- hosts: all
+  sudo: true
+  vars_files:
+    - vars/production_vault.yml
+    - vars/production.yml
+  roles:
+    - {
+        role: server,
+        tags: [ 'server' ]
+      }
+    - {
+        role: geerlingguy.firewall,
+        tags: [ 'server' ]
+      }
+    - {
+        role: geerlingguy.security,
+        tags: [ 'server' ]
+      }
+    - {
+        role: geerlingguy.postfix,
+        tags: [ 'emailing' ]
+      }
+    - {
+        role: apache,
+        tags: [ 'apache' ]
+      }
+    - {
+        role: mysql,
+        tags: [ 'mysql' ]
+      }
+    - {
+        role: php7,
+        tags: [ 'php' ]
+      }
+    - {
+        role: composer,
+        tags: [ 'php-tools' ]
+      }
+    - {
+        role: app,
+        tags: [ 'app' ]
+      }

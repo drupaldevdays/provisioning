@@ -1,0 +1,8 @@
+---
+- src: geerlingguy.firewall
+# - src: geerlingguy.git
+# - src: geerlingguy.memcached
+# - src: geerlingguy.nodejs
+- src: geerlingguy.postfix
+- src: geerlingguy.security
+# - src: geerlingguy.varnish
