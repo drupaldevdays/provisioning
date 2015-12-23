@@ -66,7 +66,7 @@ Vagrant.configure("2") do |config|
                 vagrant: true
             }
             ansible.limit = 'all'
-            ansible.tags = 'app' # specify a tag to provision
+            # ansible.tags = 'app' # specify a tag to provision
         end
     else
         config.vm.provision :shell, path: "ansible/windows.sh", args: ["default"]
