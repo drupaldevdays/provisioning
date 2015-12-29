@@ -10,25 +10,21 @@
     owner: "{{ composer.home_path_owner }}"
     group: "{{ composer.home_path_group }}"
     mode: 0755
-  when: not drupal_site_installed.stat.exists
 
 - name: Ensure drupal files directory can be written
   file:
     path: "{{ app.drupal_core_path }}/sites/default/files"
     state: directory
     mode: 0755
-  when: not drupal_site_installed.stat.exists
 
 - name: Run Composer install
   composer: command=install
             working_dir={{ app.drupal_core_path }}
             prefer_dist=yes
             no_dev={{ composer.skip_dev_deps }}
-  when: not drupal_site_installed.stat.exists
 
 - name: Build the site using robo
   command: >
     ./vendor/bin/robo build:local
     chdir={{ app.drupal_core_path }}
-  when: not drupal_site_installed.stat.exists
   sudo: yes
