@@ -27,38 +27,6 @@ php:
 php7:
     ppa: php-7.0
     packages: [php-cli, php-common, php-curl, php-gd, php-intl, php-mysql, php-opcache, php-phpdbg]
-php7-src:
-    version: "php-7.0.0RC8"
-    packages_dev:
-        - autoconf
-        - bison
-        - build-essential
-        - libbz2-dev
-        - libc-client2007e
-        - libc-client2007e-dev
-        - libcurl4-openssl-dev
-        - libfcgi-dev
-        - libfcgi0ldbl
-        - libfreetype6-dev
-        - libgmp-dev
-        - libjpeg-dev
-        - libkrb5-dev
-        - libmcrypt-dev
-        - libmysqlclient-dev
-        - libpng12-dev
-        - libpq-dev
-        - libpspell-dev
-        - librecode-dev
-        - libssl-dev
-        - libt1-dev
-        - libxml2-dev
-        - libxslt1-dev
-    config_file: { path: "/etc/php7/php.ini" }
-    base_path: "/usr/local"
-    prefix: "/usr/local/php-7.0.0RC8"
-    fpm:
-        user: www-data
-        group: www-data
 drush:
     path: '/usr/local/bin/drush'
     version: '8.0.0'
