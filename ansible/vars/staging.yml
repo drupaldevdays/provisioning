@@ -6,7 +6,7 @@ server:
     locale: en_US.UTF-8
 apache:
     install: '1'
-    docroot: /var/www
+    docroot: /var/www/milan2016.drupaldays.stage/web
     servername: milan2016.drupaldays.stage
 mysql:
     install: '1'
@@ -16,8 +16,8 @@ mysql:
     password: {{ vault_mysql_password }}
     dump: ''
 php7:
-    ppa: php-7.0
-    packages: [php-cli, php-common, php-curl, php-gd, php-intl, php-mysql, php-opcache, php-phpdbg]
+    ppa: php
+    packages: [php-cli, php-common, php-curl, php-gd, php-intl, php-mysql, php7.0-opcache, php-phpdbg]
 drush:
     destination: '/usr/local/bin/drush'
     version: '8.0.0'
@@ -26,7 +26,7 @@ xdebug:
 composer:
     install: '0'
 app:
-    drupal_core_path: /var/www/milan2016.drupaldays.loc
+    drupal_core_path: /var/www/milan2016.drupaldays.stage
 
 security_ssh_password_authentication: yes # to be changed once the machine is set up
 security_ssh_permit_root_login: no

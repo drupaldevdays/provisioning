@@ -9,7 +9,7 @@ vagrant_local:
     vm: { base_box: trusty64, hostname: default, ip: 192.168.88.88, memory: '1024', sharedfolder: ../website, useVagrantCloud: '1', syncType: nfs }
 apache:
     install: '1'
-    docroot: /var/www/milan2016.drupaldays.loc
+    docroot: /var/www/milan2016.drupaldays.loc/web
     servername: milan2016.drupaldays.loc
     user: vagrant
     group: vagrant
@@ -25,8 +25,8 @@ php:
     ppa: php5-5.6
     packages: [php5-cli, php5-intl, php5-curl, php5-common, php5-gd, php5-mbstring, php5-mysql]
 php7:
-    ppa: php-7.0
-    packages: [php-cli, php-common, php-curl, php-gd, php-intl, php-mysql, php-opcache, php-phpdbg]
+    ppa: php
+    packages: [php-cli, php-common, php-curl, php-gd, php-intl, php-mysql, php7.0-opcache, php-phpdbg]
 php7-src:
     version: "php-7.0.0RC8"
     packages_dev:
