@@ -1,10 +1,6 @@
 ---
-- name: Set the hostname in /etc/hostname
-  shell: echo {{ vagrant_local.vm.hostname }} > /etc/hostname
-  when: vagrant_local.vm.hostname is defined
-
 - name: Set the hostname
-  shell: hostname {{ vagrant_local.vm.hostname }}
+  hostname: name={{ vagrant_local.vm.hostname }}
   when: vagrant_local.vm.hostname is defined
 
 - name: Update /etc/hosts
