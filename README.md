@@ -21,9 +21,9 @@ Installation
 
 0. Create a working directory, say ``/path/to/ddd``
 
-0. Clone https://github.com/drupaldevdays/provisioning (or your fork of it) into your working directory(eg: /path/to/ddd)
+0. Clone https://github.com/drupaldevdays/provisioning (or your fork of it) into your working directory(e.g. /path/to/ddd)
 
-0. Clone https://github.com/drupaldevdays/website (or your fork of it) into your working directory(eg: /path/to/ddd).
+0. Clone https://github.com/drupaldevdays/website (or your fork of it) into your working directory(e.g. /path/to/ddd).
 
     You should now have the following folder structure:
     ```
@@ -32,7 +32,7 @@ Installation
     └── website
     ```
 
-0. If you are using ubuntu as your host operating system(ie: your physical machine), install NFS by typing:
+0. If you are using ubuntu as your host operating system(i.e. your physical machine), install NFS by typing:
     ```bash
     sudo apt-get install nfs-common nfs-kernel-server
     ```
@@ -64,11 +64,11 @@ Installation
     vagrant up --provider=virtualbox
     ```
 
-    You can also specify other providers such as `vmware` or `parallels` in case you have them installed.
+    You can also specify other providers such as `vmware` or `parallels` in case you have them installed on your local system.
 
 0. From now on you should be able to visit http://milan2016.drupaldays.loc/ in your browser
 
-0. Should authentication failures happen while the virtual machine is booting, try to start it from the UI.
+0. Should authentication failures happen while the virtual machine is booting, try to start it from the UI(e.g. the virtualbox gui app).
     Once you're in, append your public key to ``/home/vagrant/.ssh/authorized_keys`` and add the following line to your Vagrantfile:
     ```ruby
     config.ssh.private_key_path = '~/.ssh/id_rsa'
