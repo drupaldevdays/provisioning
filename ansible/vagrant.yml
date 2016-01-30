@@ -2,6 +2,8 @@
 - hosts: all
   sudo: true
   vars_files:
+    - vars/common.yml
+    - vars/vagrant_vault.yml
     - vars/vagrant.yml
   roles:
     - {
@@ -15,6 +17,10 @@
     - {
         role: geerlingguy.firewall,
         tags: [ 'server' ]
+      }
+    - {
+        role: mivok0.users,
+        tags: [ 'users' ]
       }
     - {
         role: geerlingguy.postfix,

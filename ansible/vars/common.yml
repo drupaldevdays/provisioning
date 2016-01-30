@@ -1,0 +1,45 @@
+---
+mysql:
+    install: '1'
+    root_password: "{{ vault_mysql_root_password }}"
+    database: "{{ vault_mysql_database }}"
+    user: "{{ vault_mysql_user }}"
+    password: "{{ vault_mysql_password }}"
+    dump: ''
+php7:
+    ppa: php
+    packages:
+        - php7.0-cli
+        - php7.0-common
+        - php7.0-curl
+        - php7.0-gd
+        - php7.0-intl
+        - php7.0-json
+        - php7.0-mcrypt
+        - php7.0-mysql
+        - php7.0-opcache
+        - php7.0-phpdbg
+drush:
+    path: '/usr/local/bin/drush'
+    version: '8.0.0'
+users:
+  - username: mavimo
+    name: Marco Vito Moscaritolo
+    groups: ['sudo', 'www-data']
+    uid: 1011
+    ssh_key:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwDr9N4Ta8Az1uJk191ITLvCicKf7QQ//TaXf0xs6cJ3Wc4WRy/TLf5INXrJSTk43QL28mmRYZfbTZbr4mX14njmnh6oM0GX8pVEoUHQszRaYWb2/RmhfQ6zJNXuQfxeKQ9iFBsTYO4GNsvfhhzr+HRijBUlSHmUC6FEVcg/Y2pm4SQi29CGsw9ehC5Et7qZUkKpKu3p3KMQTIRshJlRhsv3HSozjT/uWXZXMRMt9iaNcqZvi63eFaMP0BdjvN3ZZZdmVITMiliuJ/Ytyy4MohT/2dIJqjP77tRwYjr1tkEMhcf2JHCsHScVtDaf6gVsQ7MqDir/ZS7+Bt2jAJ0oTMQ=="
+  - username: omissis
+    name: Claudio Beatrice
+    groups: ['sudo', 'www-data']
+    uid: 1012
+    ssh_key:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8HNoZ3F9aGO/LxEz1MEGNd5448kccYpbXnqKOl/NSfpuOHiA190So4XcUNlOtDaVXOZNbQgkWlJSNPeVJ/bqayTlofw81vWL0Im0suPzeS9yeCKWe3oVU85osqsa3LJlwaAZAaM//uybyc+Gdqtr231+Hj+au04hhLpJTuDrqAf33i4ZRDF02nAdDaXd1n2yIZgUIrLoH6caYYM1scatMTuRz1O5lFuL4mZZP4Y74p7uywdjq+CinlIJL20knL6eey6cGhFZ1+i8F5D5CaJ+9rQZLShGkphEHTANhwgIST/AA0IK6RoSiNwq9tIKQ8cbv6kiX4ov6xyMaFvUj3uCL"
+  - username: lussoluca
+    name: Luca Lusso
+    groups: ['sudo', 'www-data']
+    uid: 1013
+    ssh_key:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDElheCyY29bDzoGUmRLmv7SlHiNKwGKbhvrMN/7hiYoVcEXNRBtJzUZxX8H+YuF8NfL2RTvKDqykgJIHqOVwtd2PkO3uJAysuPt0j5PEOlFN/tx6YoyTqn4oFYdGEE+TOx/d/MjP8QWRceTPMT4ILUNb/CHPB/EWHJYbNtXzLcgxSuIrCpbZ5GR8mQpjHGfGbkXnjy/4fsPPk6eO6zpHabTubsmeDq1eiu8npEN5UW8Pj9dMF1obh497jIMyhMlSODbLb1nwpJSpJOHY3cl7h3agbZE1KvsTpWMtvRY9VMhHTxwNYGgv6T7GDVSDfUzb0y/YYDkFgJbR7yQKFxEDhD"
+
+security_sudoers_passwordless: ['mavimo', 'omissis', 'lussoluca']

@@ -31,7 +31,7 @@
 
 - name: Build the site using robo
   command: >
-    ./vendor/bin/robo build:local
+    ./vendor/bin/robo build:{{ app.env }}
     chdir={{ app.drupal_core_path }}
   sudo: yes
   when: "'Successful' not in drupal_site_installed.stdout"

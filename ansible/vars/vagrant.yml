@@ -13,29 +13,6 @@ apache:
     servername: milan2016.drupaldays.loc
     user: vagrant
     group: vagrant
-mysql:
-    install: '1'
-    root_password: root
-    database: ddd
-    user: ddd
-    password: ddd
-    dump: ''
-php7:
-    ppa: php
-    packages:
-        - php7.0-cli
-        - php7.0-common
-        - php7.0-curl
-        - php7.0-gd
-        - php7.0-intl
-        - php7.0-json
-        - php7.0-mcrypt
-        - php7.0-mysql
-        - php7.0-opcache
-        - php7.0-phpdbg
-drush:
-    path: '/usr/local/bin/drush'
-    version: '8.0.0'
 xdebug:
     install: '1'
 composer:
@@ -48,6 +25,7 @@ composer:
     skip_dev_deps: no
 app:
     drupal_core_path: /var/www/milan2016.drupaldays.loc
+    env: local
 
 security_ssh_password_authentication: yes
 security_ssh_permit_root_login: no
