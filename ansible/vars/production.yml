@@ -10,10 +10,10 @@ apache:
     servername: milan2016.drupaldays.org
 mysql:
     install: '1'
-    root_password: {{ vault_mysql_root_password }}
-    database: {{ vault_mysql_database }}
-    user: {{ vault_mysql_user }}
-    password: {{ vault_mysql_password }}
+    root_password: "{{ vault_mysql_root_password }}"
+    database: "{{ vault_mysql_database }}"
+    user: "{{ vault_mysql_user }}"
+    password: "{{ vault_mysql_password }}"
     dump: ''
 php7:
     ppa: php
