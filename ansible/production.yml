@@ -43,6 +43,10 @@
         tags: [ 'php-tools' ]
       }
     - {
+        role: drush,
+        tags: [ 'php-tools' ]
+      }
+    - {
         role: app,
         tags: [ 'app' ]
       }
