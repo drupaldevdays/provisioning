@@ -43,3 +43,5 @@ users:
       - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDElheCyY29bDzoGUmRLmv7SlHiNKwGKbhvrMN/7hiYoVcEXNRBtJzUZxX8H+YuF8NfL2RTvKDqykgJIHqOVwtd2PkO3uJAysuPt0j5PEOlFN/tx6YoyTqn4oFYdGEE+TOx/d/MjP8QWRceTPMT4ILUNb/CHPB/EWHJYbNtXzLcgxSuIrCpbZ5GR8mQpjHGfGbkXnjy/4fsPPk6eO6zpHabTubsmeDq1eiu8npEN5UW8Pj9dMF1obh497jIMyhMlSODbLb1nwpJSpJOHY3cl7h3agbZE1KvsTpWMtvRY9VMhHTxwNYGgv6T7GDVSDfUzb0y/YYDkFgJbR7yQKFxEDhD"
 
 security_sudoers_passwordless: ['mavimo', 'omissis', 'lussoluca']
+security_ssh_password_authentication: no
+security_ssh_permit_root_login: no
