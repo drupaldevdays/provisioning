@@ -1,7 +1,7 @@
 ---
 server:
     install: '1'
-    packages: [vim, fail2ban, htop, iotop, imagemagick]
+    packages: [vim, git, fail2ban, htop, iotop, imagemagick]
     timezone: UTC
     locale: en_US.UTF-8
 apache:
