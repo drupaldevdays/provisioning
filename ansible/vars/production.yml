@@ -29,12 +29,18 @@ php7:
         - php7.0-opcache
         - php7.0-phpdbg
 drush:
-    destination: '/usr/local/bin/drush'
+    path: '/usr/local/bin/drush'
     version: '8.0.0'
 xdebug:
     install: '0'
 composer:
-    install: '0'
+    install: '1'
+    install_dir: /usr/local/bin
+    path: /usr/local/bin/composer
+    home_path: '/root/.composer'
+    home_path_owner: root
+    home_path_group: root
+    skip_dev_deps: yes
 app:
     drupal_core_path: /var/www/milan2016.drupaldays.org
 
