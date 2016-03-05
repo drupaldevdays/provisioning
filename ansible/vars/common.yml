@@ -15,10 +15,12 @@ php7:
         - php7.0-gd
         - php7.0-intl
         - php7.0-json
+        - php7.0-mbstring
         - php7.0-mcrypt
         - php7.0-mysql
         - php7.0-opcache
         - php7.0-phpdbg
+        - php7.0-xml
 drush:
     path: '/usr/local/bin/drush'
     version: '8.0.0'
